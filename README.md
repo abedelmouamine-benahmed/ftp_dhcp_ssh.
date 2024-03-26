@@ -22,7 +22,8 @@ mais si cela n'a pas été fait, il suffit de l'installer avec la commande:
 ```shell 
 sudo apt install openssh-server
 ```
-Concernant la configuration du serveur Ftp voici comment j'ai procédé:
+Concernant la configuration du serveur Ftp voici comment j'ai procédé.
+
 1.Aller dans le fichier de configuration proftpd.conf qui se situe dans etc/proftpd/proftpd.conf
 ```shell
 cd ../../etc/proftpd
