@@ -14,8 +14,7 @@ Enfin il suffit de faire exit puis connecter à nouveau pour que les modifs soie
 
 # Installation du Serveur FTP et SSH :
 
-'''
-shell:
+'''bash
 sudo apt install proftpd
 '''
 Concernant le serveur SSH il est déjà (installé durant le processus d'installation de debian)
