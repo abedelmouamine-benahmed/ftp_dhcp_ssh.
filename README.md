@@ -57,7 +57,7 @@ Group nogroup
 Ouvrons d'abord le fichier de configuration sshd_config
 ```bash
 cd  
-sudo nano ../../etc/ssh/ssh_config
+sudo nano ../../etc/ssh/sshd_config
 ```
 Ensuite mettez en commentaire la ligne (si elle existe):
 ```bash
@@ -97,7 +97,6 @@ Nous avons fini la configuration de notre serveur SFTP, il nous reste qu'ajouter
 ```bash
 cd
 sudo nano ../../etc/group
-
 ```
 Puis
 ajouter le user à la fin de la ligne :
