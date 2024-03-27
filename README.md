@@ -1,4 +1,4 @@
-r# DHCP, DNS, SFTP et SSH
+# DHCP, DNS, SFTP et SSH
 
 Configuration d'un environnement réseau virtuel à l'aide de deux
 machines virtuelles Debian, en mettant en place un serveur
