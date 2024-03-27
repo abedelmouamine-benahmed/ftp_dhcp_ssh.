@@ -8,12 +8,12 @@ serveur-client SFTP (proFTPd) avec SSH sur la seconde machine.
 # Installation (iso) et Mise à jour
 
 Installation à partir d'un iso debian 12.5-amd64.
-Puis on procède à la mise à jours des paquets en mode root.
+Puis on procède à la mise à jour des paquets en mode root.
 Par la suite on s'offre le luxe d'installer la commande sudo et d'ajouter l'utilisateur au groupe sudo qui s'effectue en faisant un nano du fichier etc/group puis en ajoutant le user a la fin de la ligne :
 ```bash
 sudo:x:X:User
 ```
-Enfin il suffit de faire exit puis connecter à nouveau pour que les modifs soient prises en compte par debian.
+Enfin il suffit de faire exit puis connecter à nouveau, pour que les modifs soient prises en compte par debian.
 
 # Installation du Serveur FTP et SSH :
 
@@ -73,13 +73,13 @@ Ce qui ajoute une couche de sécurité supplementaire.
 Une fois ceci fait nous allons décommander la partie suivantes:
 ```bash
 Match Group sftpusers
-        #On restreint les utilisateurs à le propre répertoire /home ce qui limite la mobilité des utilisateurs.
+        #On restreint les utilisateurs à leur propre répertoire /home ce qui limite la mobilité des utilisateurs:
         ChrootDirectory %h
-        # Le serveur SSH ne permettra pas l'affichage graphique des applications sur le client local. Cette fonctionnalité est souvent désactivée par défaut pour des raisons de sécurité, car elle permettrait à un utilisateur distant d'afficher des fenêtres graphiques sur le système local, ce qui peut potentiellement être exploité pour des attaques.
+        # Le serveur SSH ne permettra pas l'affichage graphique des applications sur le client local. Cette fonctionnalité est souvent désactivée par défaut pour des raisons de sécurité, car elle permettrait à un utilisateur distant d'afficher des fenêtres graphiques sur le système local, ce qui peut potentiellement être exploité pour des attaques:
         X11Forwarding no
-        # On bloque la capacité des utilisateurs SSH à ouvrir des tunnels TCP depuis le serveur vers d'autres serveurs ou services accessibles depuis le serveur distant
+        # On bloque la capacité des utilisateurs SSH à ouvrir des tunnels TCP depuis le serveur vers d'autres serveurs ou services accessibles depuis le serveur distant:
         AllowTcpForwarding no
-        # (1)On limite les utilisateurs qui se connectent au serveur ssh à utilisation du protocole SFTP pour le transfert de fichiers, sans qu'ils puissent exécuter des commandes sur le serveur.
+        # (1)On limite les utilisateurs qui se connectent au serveur ssh à utilisation du protocole SFTP pour le transfert de fichiers, sans qu'ils puissent exécuter des commandes sur le serveur:
         ForceCommand internal-sftp
 ```
 (1).
