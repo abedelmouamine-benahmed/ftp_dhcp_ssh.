@@ -92,17 +92,7 @@ Maintenant Sauvegarder le fichier (Ctrl + X), puis relancer le serveur ssh pour 
 sudo systemctl restart sshd
 
 ```
-
-Nous avons fini la configuration de notre serveur SFTP, il nous reste qu'ajouter notre utilisateur dans le groupe _ssh :
-```bash
-cd
-sudo nano ../../etc/group
-```
-Puis
-ajouter le user à la fin de la ligne :
-```bash
-_ssh:x:X:Nom_de_utilisateur
-```
+Nous avons fini la configuration de notre serveur SFTP.
 
 4.Test de connexion
 ```bash
