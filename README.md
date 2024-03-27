@@ -1,4 +1,4 @@
-# DHCP, DNS, FTP et SSH
+r# DHCP, DNS, FTP et SSH
 
 Configuration d'un environnement réseau virtuel à l'aide de deux
 machines virtuelles Debian, en mettant en place un serveur
@@ -30,12 +30,13 @@ cd ../../etc/proftpd
 ```
 Puis,
 ```shell
-nano proftpd.conf
+# Sans le sudo vous n'aurez pas le droit de sauvegarder les modifs 
+sudo nano proftpd.conf
 ```
 
 2. Modifier les lignes suivantes:
 ```
-#Nom du serveur 
+# Nom du serveur 
 ServerName:"Nom_serveur"
 # Evite que les utilisateurs du serveur FTP ne remonte dans les dossiers du système.
 DefaultRoot ~
