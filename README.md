@@ -34,7 +34,7 @@ Concernant la configuration du serveur Ftp voici comment j'ai procédé.
 
 1. Aller dans le fichier de configuration proftpd.conf qui se situe dans etc/proftpd/proftpd.conf .
 ```bash
-cd ../../etc/proftpd
+cd /etc/proftpd
 ```
 Puis,
 ```bash
