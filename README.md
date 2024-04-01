@@ -127,7 +127,7 @@ Allons dans le fichier etc/network/interface
 ```bash
 nano /etc/network/interfaces
 ```
-Voici la configuration de ce fichier:
+Voici un exemple de configuration du fichier interfaces:
 ```bash
 #This file describes the network interfaces available on your system
 and how to activate them. For more information, see interfaces(5).
@@ -141,9 +141,9 @@ iface lo inet loopback
 #The primary network interface
 allow-hotplug ens33
 iface ens33 inet static
-address 172.168.15.4
-gateway 172.168.15.1
-subnet 255.255.0.0
+address 172.168.19.95 (IP du dhcp )
+gateway 172.168.19.1 (IP routeur)
+subnet 255.255.0.0 (Masque de sous-réseaux ex:255.255.0.0)
 ```
 
 
