@@ -123,6 +123,7 @@ Voici la configuration en JSON:
 2. Configuration du réseau
 
 Maintenant que le DHCP est configuré mais non activé, pour l'activer nous allons modifier les paramètres réseau du serveur, car le DHCP a besoin d'un réseau statique avec une adresse IP fixe et d'une passerelle pour accédé à internet.
+
 Allons dans le fichier etc/network/interface
 ```bash
 nano /etc/network/interfaces
