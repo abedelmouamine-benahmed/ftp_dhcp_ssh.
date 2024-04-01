@@ -15,7 +15,7 @@ sudo:x:X:User
 ```
 Enfin il suffit de faire exit puis connecter à nouveau, pour que les modifs soient prises en compte par debian.
 
-# Installation du Serveur FTP et SSH :
+# Installation/Configuration du Serveur FTP et SSH :
 
 ```bash
 sudo apt install proftpd
@@ -99,3 +99,20 @@ Nous avons fini la configuration de notre serveur SFTP.
 sftp Nom_de_utilisateur@serveur_ip
 ```
 puis votre mot de passe utilisateur.
+
+# Installation/Configuration serveur DHCP
+
+Le paquet isc-dhcp-server étant considéré comme obsolète, nous choisirons donc isc-kea qui a prouvé sa fiabilité. 
+```bash
+apt install kea
+```
+
+1. Configuration du fichier etc/kea/kea-dhcp4.conf
+```bash
+nano /etc/kea/kea-dhcp4.conf
+```
+Voici la configuration en JSON:
+
+
+
+
