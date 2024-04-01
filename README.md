@@ -112,6 +112,8 @@ apt install kea
 nano /etc/kea/kea-dhcp4.conf
 ```
 Voici la configuration en JSON:
+![kea_JSON1](https://github.com/abedelmouamine-benahmed/ftp_dhcp_ssh./assets/145597169/0636bd6d-5b9d-4a5b-9128-96625c3a3987)
+
 
 
 
