@@ -90,7 +90,6 @@ Match Group sftpusers
 Maintenant Sauvegarder le fichier (Ctrl + X), puis relancer le serveur ssh pour appliquer le changement:
 ```bash
 sudo systemctl restart sshd
-
 ```
 Nous avons fini la configuration de notre serveur SFTP.
 
@@ -111,6 +110,7 @@ apt install kea
 ```bash
 nano /etc/kea/kea-dhcp4.conf
 ```
+
 (Je recommande de faire une duplication de ce fichier avant modification)
 ```bash
 cp kea-dhcp4.conf kea-dhcp4.conf_backup
@@ -122,11 +122,12 @@ Voici la configuration en JSON:
 
 2. Configuration du réseau
 
-Maintenant que le dhcp configurer mais non-active ,pour l'activer nous allons configurer le réseau car le dhcp a besoin un réseau static avec une IP fixe.
+Maintenant que le DHCP est configuré mais non activé, pour l'activer nous allons modifier les paramètres réseau du serveur, car le DHCP a besoin d'un réseau statique avec une adresse IP fixe et d'une passerelle pour accédé à internet.
 Allons dans le fichier etc/network/interface
 ```bash
 nano /etc/network/interfaces
 ```
+
 Voici un exemple de configuration du fichier interfaces:
 ```bash
 #This file describes the network interfaces available on your system
@@ -141,15 +142,20 @@ iface lo inet loopback
 #The primary network interface
 allow-hotplug ens33
 iface ens33 inet static
-address 172.168.19.95 (IP du dhcp )
-gateway 172.168.19.1 (IP routeur)
-subnet 255.255.0.0 (Masque de sous-réseaux ex:255.255.0.0)
+# Ip du serveur 
+address 172.168.19.95 
+# Passerelle
+gateway 172.168.19.1
+# Masque de sous-réseaux
+subnet 255.255.0.0 
 ```
+
 Enfin le networking.service et le kea-dhcp-server.service
 ```bash
 systemctl restart networking.service && systemctl restart kea-dhcp4-server.service
 ```
-En cas de problème l'utilisation des commandes :
+
+En cas de problème l'utilisation de ces commandes peut s'avérer pertinente:
 ```bash
 systemctl status nom_du_processus
 ou
