@@ -113,6 +113,8 @@ nano /etc/kea/kea-dhcp4.conf
 ```
 Voici la configuration en JSON:
 ![kea_JSON1](https://github.com/abedelmouamine-benahmed/ftp_dhcp_ssh./assets/145597169/0636bd6d-5b9d-4a5b-9128-96625c3a3987)
+![kea_JSON2](https://github.com/abedelmouamine-benahmed/ftp_dhcp_ssh./assets/145597169/ac790e22-58f1-4b40-8b74-60539a1a37b7)
+
 
 
 
