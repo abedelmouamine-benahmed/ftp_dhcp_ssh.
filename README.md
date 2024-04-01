@@ -111,11 +111,40 @@ apt install kea
 ```bash
 nano /etc/kea/kea-dhcp4.conf
 ```
+(Je recommande de faire une duplication de ce fichier avant modification)
+```bash
+cp kea-dhcp4.conf kea-dhcp4.conf_backup
+```
 Voici la configuration en JSON:
+
 ![kea_JSON1](https://github.com/abedelmouamine-benahmed/ftp_dhcp_ssh./assets/145597169/0636bd6d-5b9d-4a5b-9128-96625c3a3987)
 ![kea_JSON2](https://github.com/abedelmouamine-benahmed/ftp_dhcp_ssh./assets/145597169/ac790e22-58f1-4b40-8b74-60539a1a37b7)
 
+2. Configuration du réseau
 
+Maintenant que le dhcp configurer mais non-active ,pour l'activer nous allons configurer le réseau car le dhcp a besoin un réseau static avec une IP fixe.
+Allons dans le fichier etc/network/interface
+```bash
+nano /etc/network/interfaces
+```
+Voici la configuration de ce fichier:
+```bash
+#This file describes the network interfaces available on your system
+and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+#The loopback network interface
+auto lo
+iface lo inet loopback
+
+#The primary network interface
+allow-hotplug ens33
+iface ens33 inet static
+address 172.168.15.4
+gateway 172.168.15.1
+subnet 255.255.0.0
+```
 
 
 
