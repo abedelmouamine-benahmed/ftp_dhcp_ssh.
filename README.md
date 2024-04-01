@@ -145,7 +145,16 @@ address 172.168.19.95 (IP du dhcp )
 gateway 172.168.19.1 (IP routeur)
 subnet 255.255.0.0 (Masque de sous-réseaux ex:255.255.0.0)
 ```
-
+Enfin le networking.service et le kea-dhcp-server.service
+```bash
+systemctl restart networking.service && systemctl restart kea-dhcp4-server.service
+```
+En cas de problème l'utilisation des commandes :
+```bash
+systemctl status nom_du_processus
+ou
+journalctl -xeu nom_du_processus
+```
 
 
 
