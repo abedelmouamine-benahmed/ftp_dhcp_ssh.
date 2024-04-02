@@ -73,8 +73,10 @@ Ce qui ajoute une couche de sécurité supplementaire.
 Une fois ceci fait nous allons décommander la partie suivantes:
 ```bash
 Match Group sftpusers
-        #On restreint les utilisateurs à leur propre répertoire /home ce qui limite la mobilité des utilisateurs:
+        # On restreint les utilisateurs à leur propre répertoire /home ce qui limite la mobilité des utilisateurs:
         ChrootDirectory %h
+        # Autorise uniquement les connections avec mot de passe donc pas anonymes.
+        PasswordAuthentication yes
         # Le serveur SSH ne permettra pas l'affichage graphique des applications sur le client local. Cette fonctionnalité est souvent désactivée par défaut pour des raisons de sécurité, car elle permettrait à un utilisateur distant d'afficher des fenêtres graphiques sur le système local, ce qui peut potentiellement être exploité pour des attaques:
         X11Forwarding no
         # On bloque la capacité des utilisateurs SSH à ouvrir des tunnels TCP depuis le serveur vers d'autres serveurs ou services accessibles depuis le serveur distant:
